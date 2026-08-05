@@ -1,0 +1,16 @@
+<footer class="site-footer">
+
+    <p>
+        &copy; <span id="year"></span> Abdulrahman Sultan
+    </p>
+
+</footer>
+
+
+<script>
+    const year = document.getElementById("year");
+
+    if(year){
+        year.textContent = `${new Date().getFullYear()}`;
+    }
+</script>

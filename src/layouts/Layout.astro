@@ -1,0 +1,48 @@
+---
+import "../styles/reset.css";
+import "../styles/tokens.css";
+import "../styles/globals.css";
+import "../styles/responsive.css";
+import "../styles/components/buttons.css";
+import "../styles/components/tech-stack.css";
+import "../styles/components/footer.css"
+import "../styles/components/about.css"
+
+interface Props {
+    title?: string;
+    description?: string;
+}
+
+const {
+    title = "Abdulrahman Sultan | Software Developer",
+    description = "A Computer Science student and developer, building Crestr, an open-source hiking route planner."
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="favicon_io/favicon-32x32.png">
+
+</head>
+
+<body>
+
+    <slot />
+
+    <script src="/scripts/theme.js" is:inline></script>
+    <script src="/scripts/navigation.js" is:inline></script>
+
+</body>
+</html>

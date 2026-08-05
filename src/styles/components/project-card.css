@@ -1,0 +1,78 @@
+.project-card {
+    background-color: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card-media {
+    border-bottom: 1px solid var(--border);
+    padding: 1rem;
+    background: var(--bg);
+}
+
+.project-card-ss {
+    border-radius: var(--radius-md);
+    width: 100%;
+}
+
+.project-card-body {
+    padding: var(--space-5);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.project-card-heading-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.project-card-heading {
+    position: relative;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+.project-card-heading svg {
+    position: absolute;
+    top: .25rem;
+    left: 4.5rem;
+}
+
+.project-card-github {
+    display: flex;
+    color: var(--text-muted);
+    transition: color var(--transition);
+}
+
+.project-card-github:hover {
+    color: var(--accent);
+}
+
+.project-card-text {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+.project-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-top: var(--space-2);
+}
+
+.project-tag {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--accent);
+    border: 1px solid var(--accent-soft);
+    background-color: var(--accent-soft);
+    padding: 0.3rem 0.7rem;
+    border-radius: 20px;
+}

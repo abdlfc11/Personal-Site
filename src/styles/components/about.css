@@ -1,0 +1,7 @@
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    max-width: 42rem;
+    color: var(--text);
+}

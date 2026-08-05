@@ -1,0 +1,84 @@
+---
+import "../../styles/components/contact.css"
+---
+
+<section class="contact" id="contact">
+
+    <div class="container">
+
+        <h2 class="section-label">
+            Contact
+        </h2>
+
+        <p class="contact-intro">
+            Have a question, a project idea, or just want to say hi? Send a message below.
+        </p>
+
+        <form
+        id="contact-form"
+        class="contact-form"
+        action="https://formspree.io/f/xlgpdbow"
+        method="POST">
+
+            <div class="form-row">
+
+                <label
+                    for="contact-name">
+                    Name
+                </label>
+
+                <input
+                    id="contact-name"
+                    required
+                    class="contact-entries"
+                    type="text"
+                    name="name"
+                    placeholder="Your name"
+                    autocomplete="name"
+                >
+
+            </div>
+
+            <div class="form-row">
+
+                <label for="contact-email">Email</label>
+                <input id="contact-email" required class="contact-entries" type="email" name="email" placeholder="you@example.com" autocomplete="email">
+
+            </div>
+
+            <div class="form-row">
+
+                <label
+                    for="contact-message">
+                    Message
+                </label>
+
+                <textarea
+                    id="contact-message"
+                    class="contact-textarea"
+                    required
+                    name="message"
+                    placeholder="What's on your mind?"
+                ></textarea>
+            
+            </div>
+            
+            <button
+                class="contact-button"
+                type="submit">
+                Send message
+            </button>
+            
+            <p
+                class="form-status"
+                data-fs-success
+                data-fs-error
+                id="form-status"
+                role="status"
+                aria-live="polite"
+            ></p>
+
+        </form>
+
+    </div>
+</section>

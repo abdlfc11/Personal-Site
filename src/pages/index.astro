@@ -1,17 +1,79 @@
 ---
+import Layout from "../layouts/Layout.astro";
 
+import Header from "../components/shared/Header.astro";
+import Footer from "../components/shared/Footer.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout
+    title="Abdulrahman Sultan"
+    description="I'm Abdulrahman Sultan, a software developer sharing projects, technical writing, and insights from a Computer Science student building in public."
+>
+    <Header
+        links={[
+            { label: "Portfolio", href: "/portfolio" },
+            { label: "Blog", href: "/blog" },
+        ]}
+    />
+
+    <main id="top">
+        <section class="hero">
+            <div class="container">
+                <p class="eyebrow">Software Developer • CS Student • Photographer</p>
+
+                <h1 class="hero-name">
+                    Hi, I'm Abdulrahman
+                </h1>
+
+                <p class="hero-bio">
+                    I build software, explore the outdoors, and document what I learn along the way.
+                    I'm currently developing Crestr, a hiking and route-planning platform, while studying Computer Science.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="/portfolio" class="btn btn-primary">View my portfolio</a>
+                    <a href="/blog" rel="noopener" class="btn btn-secondary">Read my blog</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <div class="container">
+                <h2 class="section-label">Experience</h2>
+
+                <div class="about-content">
+                    <p>
+                        Over the past two years I've been building Crestr, a hiking and route-planning platform developed entirely on my own.
+                        I work across the full stack, from a Python/FastAPI backend and PostgreSQL database to a vanilla JavaScript frontend using OpenLayers.
+                        I also deploy and manage the application on a self-managed Hetzner VPS using Docker and Caddy.
+                        I'm interested in backend engineering, mapping technology, and building products that people genuinely use.
+                        Every feature, deployment, and design decision is an opportunity to learn.
+                    </p>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="blog" id="blog">
+            <div class="container">
+                <h2 class="section-label">Blog</h2>
+
+                <div class="about-content">
+                    <p>
+                        I write about coding, university, hiking, photography, fitness, and the lessons
+                        I pick up while building projects and learning in public.
+
+                        Whether it's a technical deep dive, a race recap, or thoughts from a weekend hike, you'll find it here.
+                    </p>
+
+
+                    <p>
+                        <a href="/blog" class="text-link">Read the blog →</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</Layout>

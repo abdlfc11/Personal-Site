@@ -1,0 +1,33 @@
+
+@media (max-width: 719px) {
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-4);
+        background-color: var(--bg-elevated);
+        border-bottom: 1px solid var(--border);
+        padding: var(--space-4);
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height var(--transition), opacity var(--transition);
+    }
+
+    .nav-menu.is-open {
+        max-height: 260px;
+        opacity: 1;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: var(--space-3);
+    }
+}

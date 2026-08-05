@@ -1,0 +1,45 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+import Header from "../../components/shared/Header.astro";
+import Hero from "../../components/portfolio/Hero.astro";
+import About from "../../components/portfolio/About.astro";
+import TechStack from "../../components/portfolio/TechStack.astro";
+import ProjectCard from "../../components/portfolio/ProjectCard.astro";
+import Contact from "../../components/portfolio/Contact.astro";
+import Footer from "../../components/shared/Footer.astro";
+---
+
+<Layout
+    title="Portfolio — Abdulrahman Sultan"
+    description="Projects and work by Abdulrahman Sultan, a Computer Science student building Crest and other end-to-end software."
+>
+    <Header
+        links={[
+            { label: "Projects", href: "#projects" },
+            { label: "About", href: "#about" },
+            { label: "Contact", href: "#contact" },
+            { label: "CV", href: "/CS.pdf", external: true },
+        ]}
+    />
+
+    <main id="top">
+        <Hero />
+
+        <About />
+
+        <TechStack />
+
+        <section class="projects" id="projects">
+            <div class="container">
+                <h2 class="section-label">Projects</h2>
+
+                <ProjectCard />
+            </div>
+        </section>
+
+        <Contact />
+    </main>
+
+    <Footer />
+</Layout>
