@@ -24,7 +24,7 @@ const {
         <a href="/" class="nav-logo">Abdulrahman Sultan</a>
 
         <div class="nav-right">
-            <nav class="nav-menu" id="nav-menu">
+            <nav class="nav-menu" id="nav-menu" data-nav-menu>
                 <ul class="nav-links">
                     {links.map((link) => (
                         <li>
@@ -42,6 +42,22 @@ const {
 
                 <SocialLinks />
             </nav>
+
+            <button
+                class="nav-toggle"
+                data-nav-toggle
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="nav-menu"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <span></span>
+            <span></span>
+            <span></span>
 
             <ThemeToggle />
         </div>

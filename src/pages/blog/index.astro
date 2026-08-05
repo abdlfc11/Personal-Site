@@ -1,0 +1,70 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+import Header from "../../components/shared/Header.astro";
+import Footer from "../../components/shared/Footer.astro";
+import PostCard from "../../components/blog/PostCard.astro";
+
+import "../../styles/blog/blog-index.css";
+
+const posts = [
+    {
+        title: "Building Crestr: Lessons from a Solo Full-Stack Project",
+        description:
+            "What I learned shipping a free open-source hiking route planner end-to-end.",
+        date: "05-08-2026",
+        href: "/blog/building-crestr",
+        tags: ["Crestr", "Fitness", "Life"],
+    },
+];
+---
+
+<Layout
+    title="Writing"
+    description="Thoughts on coding, university, hiking, photography, fitness, and the projects I'm building."
+>
+    <Header
+        links={[
+            { label: "Home", href: "/" }
+        ]}
+    />
+
+    <main id="top">
+        <section class="blog-hero">
+            <div class="container">
+                <h1 class="blog-hero-title">Writing</h1>
+                <p class="blog-hero-desc">
+                    Thoughts on coding, university, hiking, photography,
+                    fitness, and the projects I'm building.
+                </p>
+            </div>
+        </section>
+
+        <section class="posts-section">
+            <div class="container">
+                <h2 class="section-label">Articles</h2>
+
+                {posts.length > 0 ? (
+                    <div class="posts-grid">
+                        {posts.map((post) => (
+                            <PostCard
+                                title={post.title}
+                                description={post.description}
+                                date={post.date}
+                                href={post.href}
+                                tags={post.tags}
+                            />
+                        ))}
+                    </div>
+                ) : (
+                    <div class="posts-empty">
+                        <p>No articles yet.</p>
+                        <p>The first ones are on the way.</p>
+                    </div>
+                )}
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</Layout>

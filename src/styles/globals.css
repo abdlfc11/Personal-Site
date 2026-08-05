@@ -38,17 +38,16 @@ section {
 }
 
 .text-link {
-    cursor: pointer;
     color: var(--accent);
     text-decoration: underline;
     text-decoration-color: var(--accent-soft);
     text-underline-offset: 3px;
-    transition: color var(--transition), transform var(--transition);
+    transition: color var(--transition), text-decoration-color var(--transition);
 }
 
 .text-link:hover {
-    transform: translateY(-3px);
     color: var(--accent-strong);
+    text-decoration-color: var(--accent);
 }
 
 .text-accent {

@@ -1,0 +1,42 @@
+---
+import "../../styles/blog/post-card.css";
+
+interface Props {
+    title: string;
+    description: string;
+    date: string;
+    href: string;
+    tags?: string[];
+}
+
+const { title, description, date, href, tags = [] } = Astro.props;
+
+const [day, month, year] = date.split('-')
+const isoDate = `${year}-${month}-${day}`; // re-formats the date from British format to ISO format 
+
+const displayDate = new Date(isoDate).toLocaleDateString("en-GB", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+---
+
+<article class="post-card">
+    <a href={href} class="post-card-link">
+        <div class="post-card-meta">
+            <time datetime={date}>{displayDate}</time>
+        </div>
+
+        <h3 class="post-card-title">{title}</h3>
+
+        <p class="post-card-excerpt">{description}</p>
+
+        {tags.length > 0 && (
+            <ul class="post-card-tags">
+                {tags.map((tag) => (
+                    <li class="post-card-tag">{tag}</li>
+                ))}
+            </ul>
+        )}
+    </a>
+</article>

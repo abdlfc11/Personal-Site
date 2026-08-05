@@ -1,0 +1,133 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+import Header from "../../components/shared/Header.astro";
+import Footer from "../../components/shared/Footer.astro";
+import PostHeader from "../../components/blog/PostHeader.astro";
+
+import "../../styles/blog/blog-post.css";
+---
+
+<Layout
+    title="Building Crestr: Lessons from a Solo Full-Stack Project"
+    description="What I learned shipping a free open-source hiking route planner end-to-end, from FastAPI and PostgreSQL to OpenLayers, Docker, and running it on a Hetzner VPS."
+>
+    <Header
+        links={[
+            { label: "Home", href: "/" },
+            { label: "All Articles", href: "/blog" },
+        ]}
+    />
+
+    <main id="top">
+        <article class="blog-post">
+            <div class="container">
+                <PostHeader
+                    title="Building Crestr: Lessons from a Solo Full-Stack Project"
+                    date="05-08-2026"
+                    tags={["Crestr", "Full-stack", "Open Source"]}
+                />
+
+                <div class="post-content">
+                    <p>
+                        Over the past couple of years I've been building <strong>Crestr</strong>, a free, open-source hiking
+                        route planner, entirely on my own. This is a short
+                        write-up of what that has looked like in practice and
+                        a few things I'd do the same (or differently) next
+                        time.
+                    </p>
+
+                    <h2>Why Crestr exists</h2>
+                    <p>
+                        I wanted a tool that made it easy to plan multi-day
+                        walks without relying on closed platforms. Most of the
+                        existing options either locked features behind
+                        subscriptions or didn't give enough control over the
+                        routing and data. So I started building the version I
+                        wished existed.
+                    </p>
+
+                    <p>I also wanted to learn a lot and what better than to do something complex, break a few things, then fix them.</p>
+
+                    <h2>The stack</h2>
+                    <p>
+                        The current stack is deliberately straightforward:
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>Backend:</strong> Python + FastAPI for the
+                            API and routing logic
+                        </li>
+                        <li>
+                            <strong>Database:</strong> PostgreSQL (currently using SQLModel for the DX)
+                        </li>
+                        <li>
+                            <strong>Frontend:</strong> Vanilla JavaScript and
+                            OpenLayers for the map UI
+                        </li>
+                        <li>
+                            <strong>Infra:</strong> A Hetzner VPS running Docker
+                            + Caddy for reverse proxy and TLS
+                        </li>
+                    </ul>
+                    <p>
+                        No heavy framework on the front end. That choice has
+                        kept the surface area small and made it easier to
+                        understand every part of the request path.
+                    </p>
+
+                    <p>However, as the project grows I think I might have a few friends work with me on a refactor to a frontend framework.</p>
+
+                    <h2>What worked</h2>
+                    <p>
+                        Shipping something people can actually use, even if
+                        it's still in beta, has been the most useful feedback
+                        loop. Having a handful of beta testers, almost 50 GitHub
+                        stars, and early supporters helping with hosting costs
+                        makes the work feel less abstract.
+                    </p>
+                    <p>
+                        Owning the full stack also forced me to learn the
+                        boring but necessary pieces: DNS, TLS certificates,
+                        backups, basic monitoring, and keeping a single VPS
+                        healthy. Those skills transfer.
+                    </p>
+
+                    <h2>What I'd change</h2>
+                    <p>
+                        I spent too long polishing the map UI before the core
+                        routing was solid. Next time I'd lock the critical path
+                        (route generation, saving, sharing) first and treat
+                        everything else as optional until that felt reliable.
+                    </p>
+                    <p>
+                        I'd also document decisions earlier. A lot of the
+                        "why" lives only in my head or in scattered commit
+                        messages. This blog is partly an attempt to fix that.
+                    </p>
+
+                    <h2>What's next</h2>
+                    <p>
+                        Crestr continues to evolve while I start a Foundation
+                        Year at the University of
+                        Manchester (on the way to a Computer Science degree).
+                        The plan is to keep the project public and keep writing
+                        about the interesting (and the messy) parts.
+                    </p>
+                    <p>
+                        If you want to follow along, the code is on <a href="https://github.com/abdlfc11/crestr-hiking-app" target="_blank" rel="noopener">GitHub</a> and
+                        I'll post more technical notes here as things progress.
+                    </p>
+                </div>
+
+                <footer class="post-footer">
+                    <div class="post-footer-nav">
+                        <a href="/blog" class="post-footer-link">← All Articles</a>
+                    </div>
+                </footer>
+            </div>
+        </article>
+    </main>
+
+    <Footer />
+</Layout>

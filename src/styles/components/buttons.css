@@ -6,7 +6,6 @@
     font-size: 0.95rem;
     text-decoration: none;
     padding: 0.7rem 1.3rem;
-    margin: 1rem 0rem 1rem .5rem;
     border-radius: var(--radius-sm);
     border: 1px solid transparent;
     transition: transform var(--transition), border-color var(--transition), background-color var(--transition), color var(--transition);

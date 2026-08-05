@@ -1,0 +1,52 @@
+---
+import "../../styles/blog/blog-post.css";
+
+interface Props {
+    title: string;
+    date: string;
+    tags?: string[];
+    backHref?: string;
+    backLabel?: string;
+}
+
+const {
+    title,
+    date,
+    tags = [],
+    backHref = "/blog",
+    backLabel = "Back to blog",
+} = Astro.props;
+
+
+const [day, month, year] = date.split('-')
+const isoDate = `${year}-${month}-${day}`; // re-formats the date from British format to ISO format 
+
+const displayDate = new Date(isoDate).toLocaleDateString("en-GB", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+---
+
+<header class="post-header">
+    <a href={backHref} class="post-back">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        {backLabel}
+    </a>
+
+    <h1 class="post-title">{title}</h1>
+
+    <div class="post-meta">
+        <time datetime={date}>{displayDate}</time>
+
+        {tags.length > 0 && (
+            <ul class="post-tags">
+                {tags.map((tag) => (
+                    <li class="post-tag">{tag}</li>
+                ))}
+            </ul>
+        )}
+    </div>
+</header>
