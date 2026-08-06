@@ -1,0 +1,159 @@
+---
+import Layout from "../../layouts/Layout.astro"
+
+import Header from "../../components/shared/Header.astro"
+import Footer from "../../components/shared/Footer.astro"
+import PostHeader from "../../components/blog/PostHeader.astro"
+
+import "../../styles/blog/blog-post.css"
+---
+
+<Layout 
+    title="Overworking Myself: Lessons learnt from constant output and learning"
+    description="What I learnt from becoming burnt out as a result of my constant studying"
+>
+
+    <Header
+        links={[
+            { label: "Home", href: "/" },
+            { label: "All Articles", href: "/blog" },
+        ]}
+    />
+    
+    <main id="top">
+        <article class="blog-post">
+            <div class="container">
+                <PostHeader 
+                    title="Overworking Myself: Lessons learnt from constant output and learning"
+                    date="08-08-2026"
+                    tags={["Studying", "Life", "Wellbeing"]}
+                />
+                
+                <div class="post-content">
+
+                    <h2>
+                        Context
+                    </h2>
+
+                    <p>
+                        Over the past two years, I convinced myself that every spare hour had to
+                        be productive. If I wasn't revising, I should be building Crestr. If I
+                        wasn't building Crestr, I should be learning something new.
+                    </p>
+
+                    <p>
+                        That mindset helped me achieve a lot, but it also came with costs that I
+                        didn't fully appreciate until much later.
+                    </p>
+
+                    <h2>My Fitness</h2>
+
+                    <p>
+                        Before my final year of sixth form (12th Grade), I ran three times a week.
+                        Running was my way of switching off. It helped me manage stress, stay
+                        active, and gave me an excuse to explore new places. The first few weeks
+                        had been difficult, as they always are, but eventually it became something
+                        I genuinely looked forward to.
+                    </p>
+
+                    <p>
+                        That changed when I reached Year 13. Between Computer Science, Biology,
+                        and History, my workload increased dramatically. It wasn't unusual for me
+                        to stay up until 2 a.m., complete between 300 and 500 flashcards in a day,
+                        and repeat the same routine the following morning.
+                    </p>
+
+                    <p>
+                        Eventually, there wasn't enough time, or more accurately, enough energy,
+                        for running, hiking, or the gym.
+                    </p>
+
+                    <p>
+                        By the time my exams had finished, I'd gained around 10 kg. At first I
+                        saw it as a physical change, but looking back, it reflected something much
+                        bigger.
+                    </p>
+
+                    <h2>My Mental Health</h2>
+
+                    <p>
+                        As I stopped running, hiking, and going to the gym, my mental health
+                        gradually declined. The problem was that I didn't recognise it at the
+                        time. Instead, I convinced myself that I just needed to keep pushing until
+                        the exams were over.
+                    </p>
+
+                    <p>
+                        Just one last flashcard, I'd tell myself after completing more than 500.
+                    </p>
+
+                    <p>
+                        Just one last feature, after spending five hours working on Crestr.
+                    </p>
+
+                    <p>
+                        Just one more revision session, after an entire day of studying.
+                    </p>
+
+                    <p>
+                        Looking back, I realise I treated my mental health as something I could
+                        ignore temporarily, as if I could simply deal with it after the final
+                        exam. That wasn't what happened.
+                    </p>
+
+                    <p>
+                        During the final week of exams, my motivation disappeared almost
+                        overnight. I didn't want to complete another flashcard, open VS Code, or
+                        study at all.
+                    </p>
+
+                    <p>
+                        The lesson seems obvious now, but it certainly wasn't then. You can't
+                        neglect the things that keep you healthy and expect your output to stay
+                        the same.
+                    </p>
+
+                    <p>
+                        An hour spent running or in the gym wouldn't have been wasted time. It
+                        probably would have made the hours I did spend studying far more
+                        productive.
+                    </p>
+
+                    <h2>Where That Leaves Me Now</h2>
+
+                    <p>
+                        For a long time, I treated exercise, rest, and time away from work as
+                        rewards I'd earn once everything else was finished.
+                    </p>
+
+                    <p>
+                        The problem was that there was always one more exam, one more feature, or
+                        one more thing to learn.
+                    </p>
+
+                    <p>
+                        University will bring a new set of challenges, and I don't expect the
+                        workload to get any lighter. What I do hope changes is how I approach it.
+                    </p>
+
+                    <p>
+                        I still want to work hard. I still want to build ambitious projects. But
+                        I've realised that consistency doesn't come from squeezing every possible
+                        hour out of the day. It comes from protecting the habits that allow me to
+                        keep going in the first place.
+                    </p>
+
+                </div>
+
+                <footer class="post-footer">
+                    <div class="post-footer-nav">
+                        <a href="/blog" class="post-footer-link">← All Articles</a>
+                    </div>
+                </footer>
+
+            </div>
+        </article>
+    </main>
+
+    <Footer />
+</Layout>
