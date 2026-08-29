@@ -1,0 +1,237 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+import Header from "../../components/shared/Header.astro";
+import Footer from "../../components/shared/Footer.astro";
+import PostHeader from "../../components/blog/PostHeader.astro";
+
+import "../../styles/blog/blog-post.css"
+---
+
+<Layout
+>
+
+    <Header 
+        links={[
+            {label: "Home", href: "/"},
+            {label: "All Articles", href: "/blog"}
+        ]}
+    />
+
+    <main id="top">
+        <article class="blog-post">
+            <div class="container">
+                
+                <PostHeader 
+                    title="Notetaking as a habit: How it has helped me",
+                    date="28-08-2026",
+                    tags={["Life", "Learning", "Habits"]}
+                />
+
+                <div class="post-content">
+
+                    <h2>
+                        Context
+                    </h2>
+
+                    <p>
+                        During the last academic year I stopped note-taking, which was something I had tried hard to sustain but ultimately couldn't.
+                    </p>
+
+                    <p>
+                        This August I decided to get back into the habit.
+                        Not because it made me feel productive, but because I had started to realise how useful it was to have a record of what I was actually doing.
+                    </p>
+
+                    <p>
+                        When I was taking notes consistently, I found that they gave me something I couldn't really get from memory alone, 
+                        a way to look back at my own behaviour and identify patterns.
+                    </p>
+
+                    <p>
+                        In particular, it helped me:
+                    </p>
+
+                    <ul class="indented">
+                        <li>Improve my productivity</li>
+                        <li>Understand why some days went badly</li>
+                        <li>Manage my time more realistically</li>
+                        <li>Notice patterns that I otherwise would have ignored</li>
+                    </ul>
+
+                    <h2>
+                        How I take notes
+                    </h2>
+
+                    <p>
+                        I disagree with the notion that people should spend a long time finding and perfecting a note-taking method.
+                        In my opinion, any system that keeps you writing consistently is a good one.
+                    </p>
+
+                    <p>
+                        For me, that system is simply a daily log in Obsidian.
+                    </p>
+
+                    <p>
+                        What matters much more than the software or structure is the value of what you write down.
+                        Writing a monotonous narration of everything I did that day would be fairly useless.
+                        I want my notes to help me understand the day, not just record it.
+                    </p>
+
+                    <p>
+                        I generally split my logs into two sections: <strong>tasks</strong> and <strong>how the day went</strong>.
+                    </p>
+
+                    <p>
+                        The tasks section is simple.
+                        I write down what I want to get done that day and use it as a reference throughout the day.
+                    </p>
+
+                    <p>
+                        The second section is where most of the value is. 
+                        Rather than only recording <em>if</em> I completed something, I try to record <em>how</em> I completed it.
+                    </p>
+
+                    <p>
+                        For example, if I spend two hours on something that should have taken thirty minutes, that is much more useful information than simply writing "completed task".
+                    </p>
+
+                    <p>
+                        It gives me something to investigate.
+                        Did I underestimate the task?
+                        Did I get distracted?
+                        Was I tired?
+                        Did I spend too long trying to solve something in the wrong way?
+                    </p>
+
+                    <h2>
+                        It made my productivity less subjective
+                    </h2>
+
+                    <p>
+                        One of the biggest benefits has been being able to look at my productivity more objectively.
+                    </p>
+
+                    <p>
+                        Without notes, I might finish a day feeling like I had been unproductive without really knowing why.
+                        Alternatively, I might feel like I had worked hard simply because I had spent most of the day at my desk.
+                    </p>
+
+                    <p>
+                        I can look back and see what I actually intended to do, what I actually did, and how long certain things took.
+                        That makes it much easier to identify where a day went wrong.
+                    </p>
+
+                    <p>
+                        This has also changed how I plan future days.
+                        If I repeatedly give myself five tasks and only realistically have enough time for three,
+                        the problem probably isn't that I need to become dramatically more productive. 
+                        I may simply be planning badly.
+                    </p>
+
+                    <p>
+                        The notes give me evidence for that instead of forcing me to rely on how productive I <em>feel</em>.
+                    </p>
+
+                    <h2>
+                        It helped me notice patterns
+                    </h2>
+
+                    <p>
+                        This is probably the part of note-taking that I value the most.
+                    </p>
+
+                    <p>
+                        A single bad day isn't particularly informative.
+                        You might be tired, distracted, busy, or simply have an unusually difficult day.
+                    </p>
+
+                    <p>
+                        However, when the same thing appears repeatedly in your notes, it becomes difficult to dismiss.
+                    </p>
+
+                    <p>
+                        I have found this particularly useful for things like sleep and productivity.
+                        Instead of vaguely remembering that I "haven't been sleeping well lately", I can look back at what actually happened and see whether there is a pattern.
+                    </p>
+
+                    <p>
+                        The same applies to studying.
+                        If I repeatedly write that I struggled to concentrate at a particular point in the day,
+                        or that a certain type of task consistently takes longer than expected, that is useful information for planning around.
+                    </p>
+
+                    <p>
+                        In that sense, my notes have gradually become less like a diary and more like a dataset about myself.
+                    </p>
+
+                    <h2>
+                        It made reflection easier
+                    </h2>
+
+                    <p>
+                        Another unexpected benefit is that reflection requires much less effort when the information is already written down.
+                    </p>
+
+                    <p>
+                        Instead of asking myself "How has this week gone?", I can actually look at the week and see it.
+                    </p>
+
+                    <p>
+                        That changes the quality of the question.
+                        I am no longer trying to reconstruct several days from memory.
+                        I can compare what I planned to do with what actually happened and think about why there was a difference.
+                    </p>
+
+                    <p>
+                        This has made mistakes considerably more useful.
+                        A bad day doesn't just become a bad day that I forget about. I can understand what caused it and potentially avoid repeating it.
+                    </p>
+
+                    <h2>
+                        The real benefit isn't the notes
+                    </h2>
+
+                    <p>
+                        Ultimately, I don't think the important part of this habit is note-taking itself.
+                    </p>
+
+                    <p>
+                        The most useful part is how much better my mindset has become. 
+                    </p>
+
+                    <p>
+                        I focus on learning something everyday, rather than just completing tasks for the sake of it. 
+                    </p>
+
+                    <p>
+                        For example, the old me would just read an engineering blog, but then forget about it a week later. Now I'm proactively reading engineering blogs
+                        (such as my personal favourite, <a href="https://planetscale.com/blog/category/engineering">PlanetScale's blogs</a>) and writing down key engineering
+                        principles. 
+                    </p>
+
+                    <p> 
+                        The only reason I learn from this is because I go through the past week with every new week, exploring what I did, what I learnt and how it could apply to
+                        anything I've experienced, such as building Crestr.  
+                    </p>
+
+                    <p>
+                        This is probably the main reason I've come back to note-taking.
+                    </p>
+
+                </div>
+
+                <footer class="post-footer">
+                    <div class="post-footer-nav">
+                        <a href="/blog" class="post-footer-link">← All Articles</a>
+                    </div>
+                </footer>
+
+            </div>
+
+        </article>
+
+    </main>
+
+    <Footer />
+</Layout>
