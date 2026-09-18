@@ -34,7 +34,27 @@ import Footer from "../../components/shared/Footer.astro";
             <div class="container">
                 <h2 class="section-label">Projects</h2>
 
-                <ProjectCard />
+                <div class="projects-container">
+
+                    <ProjectCard 
+                        projectCard={
+                            {
+                                description: "A custom A* algorithm plans realistic hiking routes in Cumbria using elevation data and OSM tags.",
+                                tags: ["Python", "FastAPI", "PostgreSQL"],
+                                name: "Crestr",
+                                links: {
+                                    githubLink: "https://github.com/abdlfc11/Crestr-Hiking-App",
+                                    hasLiveLink: true,
+                                    liveLink: "https://app.crestr.co.uk"
+                                },
+                                image: {
+                                    link: "https://images.crestr.co.uk/Main-UI.jpeg",
+                                    altText: "Crestr UI"
+                                }
+                            }
+                        }
+                    />
+                </div>
             </div>
         </section>
 
