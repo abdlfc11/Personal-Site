@@ -16,10 +16,15 @@ import Footer from "../../components/shared/Footer.astro";
 >
     <Header
         links={[
+            { label: "Home", href: "https://abdul-sultan.com" },
             { label: "Projects", href: "#projects" },
             { label: "About", href: "#about" },
             { label: "Contact", href: "#contact" },
-            { label: "CV", href: "https://abdul-sultan.com/CS.pdf", external: true },
+            {
+                label: "CV",
+                href: "https://abdul-sultan.com/CS.pdf",
+                external: true,
+            },
         ]}
     />
 
@@ -35,24 +40,28 @@ import Footer from "../../components/shared/Footer.astro";
                 <h2 class="section-label">Projects</h2>
 
                 <div class="projects-container">
-
-                    <ProjectCard 
-                        projectCard={
-                            {
-                                description: "A custom A* algorithm plans realistic hiking routes in Cumbria using elevation data and OSM tags.",
-                                tags: ["Python", "FastAPI", "PostgreSQL"],
-                                name: "Crestr",
-                                links: {
-                                    githubLink: "https://github.com/abdlfc11/Crestr-Hiking-App",
-                                    hasLiveLink: true,
-                                    liveLink: "https://app.crestr.co.uk"
-                                },
-                                image: {
-                                    link: "https://images.crestr.co.uk/Main-UI.jpeg",
-                                    altText: "Crestr UI"
-                                }
-                            }
-                        }
+                    <ProjectCard
+                        projectCard={{
+                            description:
+                                "An open-source hiking route planner for the UK and Ireland.",
+                            tags: [
+                                "Python",
+                                "FastAPI",
+                                "TypeScript",
+                                "PostgreSQL",
+                            ],
+                            name: "Crestr",
+                            links: {
+                                githubLink:
+                                    "https://github.com/abdlfc11/Crestr-Hiking-App",
+                                hasLiveLink: true,
+                                liveLink: "https://app.crestr.co.uk",
+                            },
+                            image: {
+                                link: "https://images.crestr.co.uk/v1.0.0-release-image.jpeg",
+                                altText: "Crestr UI",
+                            },
+                        }}
                     />
                 </div>
             </div>
