@@ -1,0 +1,163 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+import Header from "../../components/shared/Header.astro";
+import Footer from "../../components/shared/Footer.astro";
+import PostHeader from "../../components/blog/PostHeader.astro";
+
+import "../../styles/blog/blog-post.css";
+---
+
+<Layout
+    title="Learning how to code by using my own app"
+    description="How building and using my own hiking app, Crestr, taught me to code."
+>
+    <Header
+        links={[
+            { label: "Home", href: "/" },
+            { label: "All Articles", href: "/blog" },
+        ]}
+    />
+
+    <main id="top">
+        <article class="blog-post">
+            <div class="container">
+                <PostHeader
+                    title="Learning how to code by using my own app"
+                    date="22-11-2026"
+                    tags={["Crestr", "Full-Stack", "Learning"]}
+                />
+
+                <div class="post-content">
+                    <blockquote>
+                        Crestr is an open-source hiking route planner for the UK
+                        and Ireland that I built starting when I was 16 (2 years
+                        ago at the time of writing). I currently maintain and
+                        update the project.
+                    </blockquote>
+
+                    <h2>Why I started</h2>
+
+                    <p>
+                        I was my own prospective user, and so I had a good idea
+                        of what Crestr needed: an app which let me make routes,
+                        as well as import or export them for free, without a
+                        subscription.
+                    </p>
+
+                    <h2>Starting out</h2>
+
+                    <p>
+                        What I didn't have however was the experience in
+                        developing. I only knew how to make simple CLI tools in
+                        Python, think calculators and basic quizzes. I had no
+                        experience in databases, JS, Flask, or REST APIs, and
+                        certainly none in building web apps. The project seemed
+                        daunting, but given that it was A) a school project and
+                        B) something that I would have loved to have, I
+                        continued with it.
+                    </p>
+
+                    <p>
+                        The result of brute-forcing my way into the project,
+                        with very little experience and only YouTube videos, was
+                        a project that continually evolved, from SQLite to
+                        PostgreSQL, Flask to FastAPI, and JS to TS. However
+                        every single change my codebase needed meant I learnt
+                        more.
+                    </p>
+
+                    <h2>SQLite to PostgreSQL</h2>
+
+                    <p>
+                        One example is the migration from SQLite to PostgreSQL.
+                        During early testing with friends, SQLite's one-writer
+                        restriction stopped performance logging of routing. This
+                        only surfaced with several users as I alone could never
+                        create concurrent writes. This was important as the
+                        logging was used to monitor issues in the routing
+                        engine, such as spikes in routing times or routing times
+                        that rise sharply with distance. One route is made up of
+                        many segments, potentially 100+ depending on the length
+                        of the route, and each segment wrote to the table.
+                        Having multiple users each creating a route at the same
+                        time meant that segment writes timed out (after 5s) with
+                        a <code>SQLITE_BUSY</code> error as SQLite locked the
+                        entire database. Migrating to PostgreSQL increased the
+                        quantity of data available, as every write went through.
+                        It also taught me that PostgreSQL locks at the row level
+                        during writes, so concurrent writers don't block each
+                        other.
+                    </p>
+
+                    <h2>Adopting TypeScript</h2>
+
+                    <p>
+                        Another example is the TypeScript migration. Using my
+                        own app meant that the feedback loop from spotting a
+                        missing feature to building it and testing it had no
+                        delay, so features arrived in quick succession. This
+                        took its toll on the frontend; to remember the type of
+                        arguments a function needed, I either had to navigate
+                        back and re-read it or trust a memory that faded with
+                        each new feature. That led to bugs, and the compiler
+                        caught 10+ of them after the migration alone.
+                        Contributors who had worked on the project told me it
+                        had become easier to add features, fix bugs and handle
+                        small chores. It taught me the importance of not only
+                        type-safety but also developer experience.
+                    </p>
+
+                    <h2>Splitting up the monofile</h2>
+
+                    <p>
+                        The last example is when I started Crestr's frontend
+                        with a single JS and CSS file. It was fine for the first
+                        month, but as with the TypeScript migration, the speed
+                        of my feedback loop meant features were piled into the
+                        file in quick succession. After just 6 months the
+                        codebase had grown to around 2000 lines making
+                        development speed slow. It also put off a potential
+                        contributor who told me that the monolithic nature of
+                        the file had made the project seem daunting, when it was
+                        in fact quite logically simple; the size of the file was
+                        the daunting aspect. Refactoring this taught me how to
+                        structure a codebase and how modules worked and
+                        interacted with each other.
+                    </p>
+
+                    <h2>Looking back</h2>
+
+                    <p>
+                        Looking back, building Crestr gave me skills that I
+                        didn't think I'd have by my first year at university;
+                        experience in full-stack web development, experience in
+                        APIs and conversations with developers with many more
+                        years of experience than me. Using my own app also
+                        closed feedback loops with almost no delay, and whilst
+                        that meant development was faster, it also meant that my
+                        project grew faster than my experience could handle, and
+                        so I had to restructure the project multiple times to
+                        handle the influx of code. The cost was time; it took me
+                        a long time to build Crestr to what it is now, even if
+                        the time wasn't wasted as I spent it learning . The main
+                        cause of that was the brute-force approach, as opposed
+                        to taking time to build smaller side-projects with each
+                        of the tools I went on to use. Regardless, I'd still
+                        learn the same way; the real stakes of the project
+                        forced me to fix the issues in it, whilst side projects
+                        had no commitment to do so.
+                    </p>
+                </div>
+
+                <footer class="post-footer">
+                    <div class="post-footer-nav">
+                        <a href="/blog" class="post-footer-link">
+                            ← All Articles
+                        </a>
+                    </div>
+                </footer>
+            </div>
+        </article>
+    </main>
+</Layout>

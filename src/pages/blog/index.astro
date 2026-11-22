@@ -9,18 +9,27 @@ import "../../styles/blog/blog-index.css";
 
 const posts = [
     {
+        title: "Learning how to code by using my own app",
+        description:
+            "What I learned shipping a free open-source hiking route planner end-to-end.",
+        date: "22-11-2026",
+        href: "/blog/learning-to-code-by-using-my-own-app",
+        tags: ["Crestr", "Full-Stack", "Learning"],
+    },
+    {
         title: "Notetaking as a habit: How it has helped me",
         description: "What I learnt from consistently note-taking for a month.",
         date: "28-08-2026",
         href: "/blog/note-taking",
-        tags: ["Life", "Learning", "Habits"]
+        tags: ["Life", "Learning", "Habits"],
     },
     {
         title: "Overworking Myself: Lessons learnt from constant output and learning without time for rest",
-        description: "What I learnt from having the hardest academic years of my life, how it got better, and how I'll prevent this in the future.",
+        description:
+            "What I learnt from having the hardest academic years of my life, how it got better, and how I'll prevent this in the future.",
         date: "07-08-2026",
         href: "/blog/overworking-myself",
-        tags: ["Studying", "Life", "Wellbeing"]
+        tags: ["Studying", "Life", "Wellbeing"],
     },
     {
         title: "Building Crestr: Lessons from a Solo Full-Stack Project",
@@ -29,7 +38,7 @@ const posts = [
         date: "05-08-2026",
         href: "/blog/building-crestr",
         tags: ["Crestr", "Open-Source", "Full-Stack"],
-    }
+    },
 ];
 ---
 
@@ -37,11 +46,7 @@ const posts = [
     title="Writing"
     description="Thoughts on coding, university, hiking, photography, fitness, and the projects I'm building."
 >
-    <Header
-        links={[
-            { label: "Home", href: "/" }
-        ]}
-    />
+    <Header links={[{ label: "Home", href: "/" }]} />
 
     <main id="top">
         <section class="blog-hero">
